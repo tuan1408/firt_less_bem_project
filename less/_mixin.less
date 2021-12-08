@@ -12,7 +12,7 @@
   gap: @gap-width;
 }
 
-.btn(@color: #fff, @background-color: @theme__base__color, @border: 1px solid inherit, @bg__color-hover: @page__color__bg, @text__color-hover: @theme__base__color) {
+.btn(@color, @background-color, @background__color-hover, @text__color-hover) {
   background-color: @background-color;
   padding: 12px 18px;
   display: inline-block;
@@ -20,22 +20,23 @@
 
   color: @color;
   font-size: @font-size__base;
-  border: @border;
   font-weight: @font-weight__bold;
+  letter-spacing: @letter-spacing__m;
 
-  letter-spacing: 0.3px;
-  line-height: 18px;
+  line-height: @line-height__small;
   &:hover {
     opacity: 0.8;
-    background-color: @bg__color-hover;
+    background-color: @background__color-hover;
     color: @text__color-hover;
   }
 }
 
-.heading-respon(@size: 28px, @line-hight: 38px, @letter-spacing: 0.1px) {
-  font-size: @size;
-  line-height: @line-hight;
-  letter-spacing: @letter-spacing;
+.btn-default {
+  .btn(@color-white, @color__theme__base, @color-white, @color__theme__base);
+}
+
+.btn-trans {
+  .btn(@color__theme__base, transparent, @color__theme__base, @color-white);
 }
 
 .text(
@@ -43,7 +44,7 @@
   @font-weight: @font-weight__base, 
   @letter-spacing: @letter-spacing__m, 
   @line-height: 16px,
-  @color:@text__base__color
+  @color:@color__text__base
 ) {
   font-size: @font-size;
   font-weight: @font-weight;
