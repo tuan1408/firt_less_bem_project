@@ -1,0 +1,53 @@
+.flex(@align: flex-start, @justify: flex-start, @wrap: nowrap,@dir: row) {
+  display: flex;
+  align-items: @align;
+  justify-content: @justify;
+  flex-wrap: @wrap;
+  flex-direction: @dir;
+}
+
+.grid(@width: 350px, @fraction: 1fr, @gap-width: 30px) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(@width, @fraction));
+  gap: @gap-width;
+}
+
+.btn(@color: #fff, @background-color: @theme__base__color, @border: 1px solid inherit, @bg__color-hover: @page__color__bg, @text__color-hover: @theme__base__color) {
+  background-color: @background-color;
+  padding: 12px 18px;
+  display: inline-block;
+  text-align: center;
+
+  color: @color;
+  font-size: @font-size__base;
+  border: @border;
+  font-weight: @font-weight__bold;
+
+  letter-spacing: 0.3px;
+  line-height: 18px;
+  &:hover {
+    opacity: 0.8;
+    background-color: @bg__color-hover;
+    color: @text__color-hover;
+  }
+}
+
+.heading-respon(@size: 28px, @line-hight: 38px, @letter-spacing: 0.1px) {
+  font-size: @size;
+  line-height: @line-hight;
+  letter-spacing: @letter-spacing;
+}
+
+.text(
+  @font-size: @font-size__base, 
+  @font-weight: @font-weight__base, 
+  @letter-spacing: @letter-spacing__m, 
+  @line-height: 16px,
+  @color:@text__base__color
+) {
+  font-size: @font-size;
+  font-weight: @font-weight;
+  letter-spacing: @letter-spacing;
+  color: @color;
+  line-height: @line-height;
+}
